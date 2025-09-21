@@ -138,15 +138,15 @@
     const botonNo = document.getElementById('botonNo');
     const contenedor = document.querySelector('.contenedor');
     
-    // Función para el botón "Sí"
+    // Función para el botón "Sí" (funciona igual en PC y celular)
     botonSi.addEventListener('click', () => {
       botonSi.style.backgroundColor = '#FFC0CB';
       botonSi.style.transform = 'scale(1.1)';
-      alert('¡Sabía que lo aceptarías! ♡');
+      alert('¡Sabía que lo aceptarías! ❤️');
     });
 
-    // Función para el botón "No"
-    botonNo.addEventListener('mouseenter', () => {
+    // Función para el botón "No" (funciona en PC y celular)
+    const moverBoton = () => {
       const contenedorRect = contenedor.getBoundingClientRect();
       const botonRect = botonNo.getBoundingClientRect();
       
@@ -156,7 +156,11 @@
       botonNo.style.transition = 'all 0.5s ease-out';
       botonNo.style.left = `${nuevaPosX}px`;
       botonNo.style.top = `${nuevaPosY}px`;
-    });
+    };
+
+    botonNo.addEventListener('mouseenter', moverBoton); // Para computadoras (mouse)
+    botonNo.addEventListener('touchstart', moverBoton); // Para celulares (touch)
   </script>
 </body>
+
 </html>
