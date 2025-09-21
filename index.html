@@ -68,6 +68,8 @@
       display: flex;
       justify-content: center;
       gap: 50px;
+      position: relative;
+      width: 100%;
     }
 
     /* Estilos base para los botones */
@@ -138,14 +140,12 @@
     const botonNo = document.getElementById('botonNo');
     const contenedor = document.querySelector('.contenedor');
     
-    // Función para el botón "Sí" (funciona igual en PC y celular)
     botonSi.addEventListener('click', () => {
       botonSi.style.backgroundColor = '#FFC0CB';
       botonSi.style.transform = 'scale(1.1)';
       alert('¡Sabía que lo aceptarías! ❤️');
     });
 
-    // Función para el botón "No" (funciona en PC y celular)
     const moverBoton = () => {
       const contenedorRect = contenedor.getBoundingClientRect();
       const botonRect = botonNo.getBoundingClientRect();
@@ -158,9 +158,8 @@
       botonNo.style.top = `${nuevaPosY}px`;
     };
 
-    botonNo.addEventListener('mouseenter', moverBoton); // Para computadoras (mouse)
-    botonNo.addEventListener('touchstart', moverBoton); // Para celulares (touch)
+    botonNo.addEventListener('mouseenter', moverBoton);
+    botonNo.addEventListener('touchstart', moverBoton);
   </script>
 </body>
-
 </html>
