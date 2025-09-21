@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi lindo Jai :3</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Estilos generales para el cuerpo de la página */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #FFF8E1;
+      font-family: 'Playfair Display', serif;
+      flex-direction: column;
+      color: #333333;
+      padding: 20px;
+    }
+
+    /* Contenedor principal para la pregunta y botones */
+    .contenedor {
+      text-align: center;
+      position: relative;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    /* Estilos para el texto */
+    .contenedor-principal {
+      text-align: center;
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 1.2em;
+      line-height: 1.6;
+    }
+
+    /* Estilos para el título principal */
+    h1 {
+      font-size: 3em;
+      font-weight: 700;
+      color: #DAA520;
+    }
+
+    h2 {
+      color: #DAA520;
+    }
+
+    /* Estilos para la pregunta */
+    #pregunta {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    /* Estilos para el contenedor de los botones */
+    .botones {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    /* Estilos base para los botones */
+    .boton {
+      padding: 12px 30px;
+      font-size: 1.2em;
+      font-family: 'Playfair Display', serif;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: white;
+    }
+
+    /* Estilos específicos para el botón "Sí" */
+    #botonSi {
+      background-color: #DAA520;
+    }
+
+    /* Estilos específicos para el botón "No" */
+    #botonNo {
+      background-color: #dc3545;
+      position: absolute;
+      top: auto;
+      left: auto;
+    }
+
+    /* Estilos para la imagen */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor-principal">
+    <h1 style="text-align:center;">Mi bello jaider <3</h1>
+    <h2 style="text-align:center;">♡</h2>
+    <p style="text-align:center;">
+      Te amo demasiado mi niño hermoso.
+    </p>
+    <p style="text-align:center;">
+      Cada vez que me hablas me pongo demasiado nervioso<br><br>
+      ¿Por que?<br><br>
+      Bueno, creo que es simplemente los sentimientos que tengo por ti,<br>
+      cada dia me levanto y agradezco que el destino nos haya<br>
+      reunido a ambos, creo que por algo nos conocimos ♡, ademas<br>
+      aunque ahora mismo no pueda darte una linda flor <span style="color: #FCFF69;">amarilla</span><br>
+      presencialmente espero te guste esta florcita del maincra<br>
+    </p>
+    <img src="https://i.pinimg.com/1200x/ec/2a/54/ec2a54e35b927269e1e9faf4d116d55b.jpg" alt="una bonita flor para mi bello novio, mua">
+  </div>
+  
+  <div class="contenedor">
+    <p id="pregunta">¿Puedes aceptar que eres el novio más lindo del mundo?</p>
+    <div class="botones">
+      <button class="boton" id="botonSi">Sí</button>
+      <button class="boton" id="botonNo">No</button>
+    </div>
+  </div>
+
+  <script>
+    const botonSi = document.getElementById('botonSi');
+    const botonNo = document.getElementById('botonNo');
+    const contenedor = document.querySelector('.contenedor');
+    
+    // Función para el botón "Sí"
+    botonSi.addEventListener('click', () => {
+      botonSi.style.backgroundColor = '#FFC0CB';
+      botonSi.style.transform = 'scale(1.1)';
+      alert('¡Sabía que lo aceptarías! ♡');
+    });
+
+    // Función para el botón "No"
+    botonNo.addEventListener('mouseenter', () => {
+      const contenedorRect = contenedor.getBoundingClientRect();
+      const botonRect = botonNo.getBoundingClientRect();
+      
+      const nuevaPosX = Math.random() * (contenedorRect.width - botonRect.width);
+      const nuevaPosY = Math.random() * (contenedorRect.height - botonRect.height);
+      
+      botonNo.style.transition = 'all 0.5s ease-out';
+      botonNo.style.left = `${nuevaPosX}px`;
+      botonNo.style.top = `${nuevaPosY}px`;
+    });
+  </script>
+</body>
+</html>
